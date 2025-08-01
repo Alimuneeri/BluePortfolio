@@ -1,0 +1,231 @@
+---
+layout: default
+title: "{{ site.full_name }} | {{ site.profession }}"
+---
+
+<!-- Navigation -->
+<nav class="bg-white shadow-md py-4 sticky top-0 z-50">
+    <div class="container mx-auto px-4 flex justify-between items-center">
+        <a href="#hero" class="text-2xl font-bold text-gray-900 hover:text-blue-600 transition duration-300">
+            {{ site.full_name }}
+        </a>
+        <div class="hidden md:flex space-x-6">
+            <a href="#about" class="text-gray-600 hover:text-blue-600 transition duration-300 font-medium">About</a>
+            <a href="#portfolio" class="text-gray-600 hover:text-blue-600 transition duration-300 font-medium">Work</a>
+            <a href="#testimonials" class="text-gray-600 hover:text-blue-600 transition duration-300 font-medium">Testimonials</a>
+            <a href="#contact" class="text-gray-600 hover:text-blue-600 transition duration-300 font-medium">Contact</a>
+        </div>
+        <!-- Mobile Menu Button (Hamburger) -->
+        <button id="mobile-menu-button" class="md:hidden text-gray-600 hover:text-blue-600 focus:outline-none p-2">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+            </svg>
+        </button>
+    </div>
+    <!-- Mobile Menu (Hidden by default, toggled by JS) -->
+    <div id="mobile-menu" class="hidden md:hidden bg-white px-4 pt-2 pb-4 space-y-2 border-t border-gray-200">
+        <a href="#about" class="block text-gray-700 hover:text-blue-600 transition duration-300 py-2 px-3 rounded-md">About</a>
+        <a href="#portfolio" class="block text-gray-700 hover:text-blue-600 transition duration-300 py-2 px-3 rounded-md">Work</a>
+        <a href="#testimonials" class="block text-gray-700 hover:text-blue-600 transition duration-300 py-2 px-3 rounded-md">Testimonials</a>
+        <a href="#contact" class="block text-gray-700 hover:text-blue-600 transition duration-300 py-2 px-3 rounded-md">Contact</a>
+    </div>
+</nav>
+
+<!-- JavaScript for Mobile Menu Toggle -->
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const navLinks = mobileMenu.querySelectorAll('a');
+
+        mobileMenuButton.addEventListener('click', function() {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu when a link is clicked (for smooth scrolling)
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+    });
+</script>
+
+<!-- Hero Section -->
+<section id="hero" class="relative bg-gradient-to-r from-blue-600 to-indigo-700 text-white py-20 md:py-32 flex items-center justify-center min-h-screen-75 overflow-hidden">
+    <!-- Background Overlay/Image -->
+    <div class="absolute inset-0 bg-cover bg-center opacity-20" style="background-image: url('{{ site.baseurl }}/assets/images/hero-bg.jpg');"></div>
+    <div class="container mx-auto px-4 text-center relative z-10">
+        <div class="flex flex-col md:flex-row items-center justify-center md:space-x-12">
+            <!-- Professional Photo -->
+            <div class="mb-8 md:mb-0 md:w-1/3 flex justify-center">
+                <img src="{{ site.baseurl }}/assets/images/me.png" alt="{{ site.full_name }}" class="w-48 h-48 md:w-64 md:h-64 object-cover rounded-full shadow-xl border-4 border-white">
+            </div>
+            <!-- Text Content -->
+            <div class="md:w-2/3 text-center md:text-left">
+                <h1 class="text-4xl md:text-6xl font-extrabold leading-tight mb-4 drop-shadow-lg">
+                    {{ site.full_name }}
+                </h1>
+                <p class="text-xl md:text-2xl font-light mb-6 opacity-90">
+                    {{ site.tagline }}
+                </p>
+                <a href="{{ site.hero_cta_link }}" class="inline-block bg-white text-blue-700 hover:bg-blue-100 font-semibold py-3 px-8 text-lg rounded-full shadow-lg transition duration-300 transform hover:scale-105">
+                    {{ site.hero_cta_text }}
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- About Me Section -->
+<section id="about" class="py-16 md:py-24 bg-white">
+    <div class="container mx-auto px-4 max-w-4xl">
+        <h2 class="text-4xl font-bold text-center text-gray-900 mb-12">About Me</h2>
+        <div class="bg-gray-100 p-8 md:p-12 rounded-lg shadow-lg">
+            <p class="text-lg text-gray-700 leading-relaxed mb-6">
+                {{ site.about_me_text }}
+            </p>
+            <h3 class="text-2xl font-semibold text-gray-800 mb-6">Key Accomplishments:</h3>
+            <ul class="list-disc list-inside text-lg text-gray-700 space-y-3">
+                {% for accomplishment in site.about_me_accomplishments %}
+                    <li class="flex items-start">
+                        <svg class="w-6 h-6 text-blue-500 mr-2 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                        </svg>
+                        <span>{{ accomplishment }}</span>
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+</section>
+
+<!-- Portfolio/Work Section -->
+<section id="portfolio" class="py-16 md:py-24 bg-gray-50">
+    <div class="container mx-auto px-4">
+        <h2 class="text-4xl font-bold text-center text-gray-900 mb-12">My Work & Portfolio</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {% for item in site.portfolio_items %}
+            <div class="bg-white rounded-lg shadow-xl overflow-hidden transform hover:scale-105 transition duration-300">
+                <img src="{{ item.image }}" alt="{{ item.title }}" class="w-full h-60 object-cover">
+                <div class="p-6">
+                    <h3 class="text-2xl font-semibold text-gray-900 mb-2">{{ item.title }}</h3>
+                    <p class="text-sm text-blue-600 font-medium mb-3">{{ item.category }}</p>
+                    <p class="text-gray-700 mb-4">{{ item.description }}</p>
+                    <a href="{{ item.link }}" class="inline-block bg-blue-600 text-white py-2 px-5 text-sm font-medium rounded-md hover:bg-blue-700 transition duration-300">
+                        View Details
+                    </a>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        <div class="text-center mt-12">
+            <a href="#contact" class="inline-block bg-blue-500 text-white py-3 px-8 text-lg font-semibold rounded-full hover:bg-blue-600 transition duration-300 shadow-md">
+                View All Work (Contact Me)
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- Testimonials Section -->
+<section id="testimonials" class="py-16 md:py-24 bg-white">
+    <div class="container mx-auto px-4 max-w-4xl">
+        <h2 class="text-4xl font-bold text-center text-gray-900 mb-12">What People Say</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {% for testimonial in site.testimonials %}
+            <div class="bg-gray-100 p-8 rounded-lg shadow-lg flex flex-col justify-between">
+                <p class="text-xl italic text-gray-700 mb-6">"{{ testimonial.quote }}"</p>
+                <div class="flex items-center">
+                    <!-- Placeholder for initials or small profile image -->
+                    <div class="w-12 h-12 bg-blue-200 text-blue-700 flex items-center justify-center rounded-full text-xl font-bold mr-4 flex-shrink-0">
+                        {{ testimonial.author | slice: 0 }}
+                    </div>
+                    <div>
+                        <p class="font-semibold text-gray-900">{{ testimonial.author }}</p>
+                        <p class="text-sm text-gray-600">{{ testimonial.title }}</p>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<!-- Contact Section -->
+<section id="contact" class="py-16 md:py-24 bg-gradient-to-r from-blue-700 to-indigo-800 text-white">
+    <div class="container mx-auto px-4 max-w-3xl text-center">
+        <h2 class="text-4xl font-bold mb-8">Get in Touch</h2>
+        <p class="text-xl mb-10 opacity-90">
+            Have a project in mind, a question, or just want to connect? Feel free to reach out!
+        </p>
+
+        <!-- Contact Information -->
+        <div class="flex flex-wrap justify-center gap-8 mb-12">
+            <div class="flex items-center bg-white text-gray-800 p-4 rounded-lg shadow-md">
+                <svg class="w-6 h-6 mr-3 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8m-2 4v7a2 2 0 01-2 2H7a2 2 0 01-2-2v-7"></path></svg>
+                <a href="mailto:{{ site.email }}" class="font-medium hover:underline">{{ site.email }}</a>
+            </div>
+            {% if site.twitter_username %}
+            <div class="flex items-center bg-white text-gray-800 p-4 rounded-lg shadow-md">
+                <svg class="w-6 h-6 mr-3 text-blue-600" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646A4.192 4.192 0 0019.6 3.126a8.38 8.38 0 01-2.67 1.015 4.192 4.192 0 00-7.155 3.814 11.807 11.807 0 01-8.605-4.373 4.192 4.192 0 001.29 5.572A4.17 4.17 0 01.312 8.022v.053a4.192 4.192 0 003.36 4.108 4.192 4.192 0 01-1.89.072 4.194 4.194 0 003.935 2.918 8.399 8.399 0 01-5.139 1.77c-.333 0-.664-.023-.99-.059a11.807 11.807 0 006.41 1.884"></path></svg>
+                <a href="https://twitter.com/{{ site.twitter_username }}" target="_blank" rel="noopener noreferrer" class="font-medium hover:underline">Twitter</a>
+            </div>
+            {% endif %}
+            {% if site.linkedin_username %}
+            <div class="flex items-center bg-white text-gray-800 p-4 rounded-lg shadow-md">
+                <svg class="w-6 h-6 mr-3 text-blue-600" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M0 0h24v24H0z" fill="none"/><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.761 0 5-2.239 5-5v-14c0-2.761-2.239-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                <a href="https://linkedin.com/in/{{ site.linkedin_username }}" target="_blank" rel="noopener noreferrer" class="font-medium hover:underline">LinkedIn</a>
+            </div>
+            {% endif %}
+            {% if site.github_username %}
+            <div class="flex items-center bg-white text-gray-800 p-4 rounded-lg shadow-md">
+                <svg class="w-6 h-6 mr-3 text-blue-600" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.471.087.686-.207.686-.465 0-.229-.008-.849-.013-1.666-2.782.603-3.37-1.34-3.37-1.34-.454-1.156-1.11-1.464-1.11-1.464-.908-.62.069-.608.069-.608 1.007.07 1.532 1.03 1.532 1.03.89 1.529 2.34 1.089 2.91.833.091-.647.349-1.089.635-1.338-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.682-.103-.253-.447-1.27.098-2.651 0 0 .84-.27 2.75 1.025.798-.222 1.649-.333 2.498-.337.85.004 1.7.115 2.498.337 1.908-1.295 2.748-1.025 2.748-1.025.546 1.381.202 2.398.099 2.651.64.698 1.028 1.591 1.028 2.682 0 3.841-2.339 4.686-4.566 4.935.359.309.678.919.678 1.852 0 1.338-.012 2.419-.012 2.747 0 .259.215.556.692.458C21.133 20.19 24 16.438 24 12.017 24 6.484 19.522 2 14 2h-2z"/></svg>
+                <a href="https://github.com/{{ site.github_username }}" target="_blank" rel="noopener noreferrer" class="font-medium hover:underline">GitHub</a>
+            </div>
+            {% endif %}
+        </div>
+
+        <!-- Placeholder for Contact Form -->
+        <div class="bg-white text-gray-800 p-8 rounded-lg shadow-xl max-w-xl mx-auto">
+            <h3 class="text-2xl font-semibold mb-6">Send a Message</h3>
+            <form action="YOUR_FORM_SUBMISSION_URL" method="POST" class="space-y-6">
+                <div>
+                    <label for="name" class="block text-left text-gray-700 text-sm font-bold mb-2">Name:</label>
+                    <input type="text" id="name" name="name" class="shadow appearance-none border rounded-md w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Your Name" required>
+                </div>
+                <div>
+                    <label for="email" class="block text-left text-gray-700 text-sm font-bold mb-2">Email:</label>
+                    <input type="email" id="email" name="email" class="shadow appearance-none border rounded-md w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="your.email@example.com" required>
+                </div>
+                <div>
+                    <label for="message" class="block text-left text-gray-700 text-sm font-bold mb-2">Message:</label>
+                    <textarea id="message" name="message" rows="6" class="shadow appearance-none border rounded-md w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Your message..." required></textarea>
+                </div>
+                <button type="submit" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-md transition duration-300 transform hover:scale-105 shadow-lg">
+                    Send Message
+                </button>
+            </form>
+            <p class="text-xs text-gray-500 mt-4">
+                *Note: For the contact form to work, you'll need to integrate a backend service like Formspree, Netlify Forms, or similar. Replace "YOUR_FORM_SUBMISSION_URL" with your actual form endpoint.
+            </p>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="bg-gray-900 text-white py-8">
+    <div class="container mx-auto px-4 text-center">
+        <p class="text-sm">&copy; {{ 'now' | date: "%Y" }} {{ site.full_name }}. All rights reserved.</p>
+        <div class="flex justify-center space-x-4 mt-4">
+            {% if site.twitter_username %}
+            <a href="https://twitter.com/{{ site.twitter_username }}" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-white transition duration-300">Twitter</a>
+            {% endif %}
+            {% if site.linkedin_username %}
+            <a href="https://linkedin.com/in/{{ site.linkedin_username }}" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-white transition duration-300">LinkedIn</a>
+            {% endif %}
+            {% if site.github_username %}
+            <a href="https://github.com/{{ site.github_username }}" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-white transition duration-300">GitHub</a>
+            {% endif %}
+        </div>
+    </div>
+</footer>

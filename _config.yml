@@ -1,0 +1,81 @@
+# Site settings
+title: Your Name | Professional Title
+email: your.email@example.com
+description: >- # this means to ignore newlines until "baseurl:"
+  A versatile one-page personal branding template for journalists, authors, lawyers, and other professionals.
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "" # the base hostname & protocol for your site, e.g. http://example.com
+twitter_username: your_twitter
+github_username: your_github
+linkedin_username: your_linkedin
+
+# Professional Profile Variables (Easily customizable for different professions)
+# You can change these directly in _config.yml or override in page front matter
+profession: "General Professional" # e.g., "Journalist", "Author", "Lawyer"
+full_name: "John Doe"
+tagline: "Crafting impactful narratives and delivering exceptional results."
+hero_cta_text: "Learn More About My Work"
+hero_cta_link: "#portfolio"
+about_me_text: >
+  Welcome to my professional space. I am a dedicated and passionate individual with a proven track record
+  in my field. My work is driven by a commitment to excellence and a desire to make a meaningful impact.
+  I believe in continuous learning and adapting to new challenges to deliver the best possible outcomes
+  for my clients and audience.
+about_me_accomplishments:
+  - "Awarded 'Top Professional in [Field] 2023'"
+  - "Successfully completed 50+ major projects"
+  - "Published 10+ articles/books in leading industry journals/publishers"
+  - "Keynote speaker at 5+ international conferences"
+
+# Portfolio/Work Section Configuration
+# This is a sample structure. You'll add more items in the actual HTML.
+portfolio_items:
+  - title: "Project Alpha"
+    category: "Writing"
+    image: "https://placehold.co/600x400/000000/FFFFFF?text=Project+Alpha"
+    link: "#"
+    description: "A detailed description of Project Alpha, highlighting key achievements and impact."
+  - title: "Case Study Beta"
+    category: "Legal"
+    image: "https://placehold.co/600x400/000000/FFFFFF?text=Case+Study+Beta"
+    link: "#"
+    description: "An overview of Case Study Beta, demonstrating problem-solving and successful outcomes."
+  - title: "Book Release Gamma"
+    category: "Publication"
+    image: "https://placehold.co/600x400/000000/FFFFFF?text=Book+Release+Gamma"
+    link: "#"
+    description: "Information about Book Release Gamma, including its themes and critical reception."
+
+# Testimonials Section Configuration
+testimonials:
+  - quote: "An exceptional professional with unparalleled dedication and insight. Highly recommended!"
+    author: "Jane Smith"
+    title: "CEO, Company XYZ"
+  - quote: "Their work consistently exceeds expectations, delivering impactful results every time."
+    author: "Robert Johnson"
+    title: "Editor-in-Chief, Publishing House"
+  - quote: "Truly a master of their craft. Their expertise was invaluable to our success."
+    author: "Emily White"
+    title: "Managing Partner, Law Firm ABC"
+
+# Build settings
+markdown: kramdown
+# theme: minima # Disabled to prevent conflicts with Tailwind CSS
+plugins:
+  - jekyll-feed
+
+# Exclude from processing.
+# The following items will not be processed, by default.
+# Any item listed under the `exclude:` key here will be automatically added to
+# the `exclude:` list in <root>/.gitignore.
+exclude:
+  - .sass-cache/
+  - .jekyll-cache/
+  - gemfiles/
+  - Gemfile
+  - Gemfile.lock
+  - node_modules/
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/

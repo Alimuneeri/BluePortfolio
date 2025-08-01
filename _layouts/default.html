@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ site.title }}</title>
+    <meta name="description" content="{{ site.description }}">
+
+    <!-- Inter Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Custom styles for Inter font and smooth scrolling */
+        body {
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+        }
+        /* Ensure all elements have rounded corners by default */
+        * {
+            border-radius: 0.375rem; /* Tailwind's rounded-md */
+        }
+        /* Override for specific elements if needed, or apply more specific classes */
+        .rounded-none { border-radius: 0 !important; }
+        .rounded-sm { border-radius: 0.125rem !important; }
+        .rounded-md { border-radius: 0.375rem !important; }
+        .rounded-lg { border-radius: 0.5rem !important; }
+        .rounded-xl { border-radius: 0.75rem !important; }
+        .rounded-2xl { border-radius: 1rem !important; }
+        .rounded-3xl { border-radius: 1.5rem !important; }
+        .rounded-full { border-radius: 9999px !important; }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800 antialiased leading-normal tracking-wide">
+
+    <!-- This is where the content of individual pages/posts will be injected -->
+    {{ content }}
+
+</body>
+</html>
