@@ -63,15 +63,15 @@ testimonials:
   - quote: "An exceptional professional with unparalleled dedication and insight. Highly recommended!"
     author: "Jane Smith"
     title: "CEO, Company XYZ"
-    image: "https://i.pravatar.cc/150?img=1"
+    image: "/assets/images/testimonials/testimonials-m-13.webp"
   - quote: "Their work consistently exceeds expectations, delivering impactful results every time."
     author: "Robert Johnson"
     title: "Editor-in-Chief, Publishing House"
-    image: "https://i.pravatar.cc/150?img=2"
+    image: "/assets/images/testimonials/testimonials-m-9.webp"
   - quote: "Truly a master of their craft. Their expertise was invaluable to our success."
-    author: "Emily White"
+    author: "Morgan White"
     title: "Managing Partner, Law Firm ABC"
-    image: "https://i.pravatar.cc/150?img=3" 
+    image: "/assets/images/testimonials/testimonials-3.jpg" 
 
 # Build settings
 markdown: kramdown
