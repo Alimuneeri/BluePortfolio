@@ -3,40 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Name | Professional Title</title>
+    <title>John Doe | Software Engineer</title>
     <meta name="description" content="A versatile one-page personal branding template for journalists, authors, lawyers, and other professionals.">
 
-    <!-- Inter Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
-    <!-- Tailwind CSS CDN -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
     <script src="https://cdn.tailwindcss.com"></script>
+    
     <style>
-        /* Custom styles for Inter font and smooth scrolling */
         body {
             font-family: 'Inter', sans-serif;
             scroll-behavior: smooth;
         }
-        /* Ensure all elements have rounded corners by default */
-        * {
-            border-radius: 0.375rem; /* Tailwind's rounded-md */
-        }
-        /* Override for specific elements if needed, or apply more specific classes */
-        .rounded-none { border-radius: 0 !important; }
-        .rounded-sm { border-radius: 0.125rem !important; }
-        .rounded-md { border-radius: 0.375rem !important; }
-        .rounded-lg { border-radius: 0.5rem !important; }
-        .rounded-xl { border-radius: 0.75rem !important; }
-        .rounded-2xl { border-radius: 1rem !important; }
-        .rounded-3xl { border-radius: 1.5rem !important; }
-        .rounded-full { border-radius: 9999px !important; }
     </style>
+    
+    <link rel="stylesheet" href="/assets/css/main.css">
 </head>
 <body class="bg-gray-50 text-gray-800 antialiased leading-normal tracking-wide">
 
-    <!-- This is where the content of individual pages/posts will be injected -->
     <!-- Navigation -->
 <nav class="bg-white shadow-md py-4 sticky top-0 z-50">
     <div class="container mx-auto px-4 flex justify-between items-center">
@@ -48,6 +36,7 @@
             <a href="#portfolio" class="text-gray-600 hover:text-blue-600 transition duration-300 font-medium">Work</a>
             <a href="#testimonials" class="text-gray-600 hover:text-blue-600 transition duration-300 font-medium">Testimonials</a>
             <a href="#contact" class="text-gray-600 hover:text-blue-600 transition duration-300 font-medium">Contact</a>
+            <a href="#podcast" class="text-gray-600 hover:text-blue-600 transition duration-300 font-medium">Podcast</a>
         </div>
         <!-- Mobile Menu Button (Hamburger) -->
         <button id="mobile-menu-button" class="md:hidden text-gray-600 hover:text-blue-600 focus:outline-none p-2">
@@ -62,28 +51,10 @@
         <a href="#portfolio" class="block text-gray-700 hover:text-blue-600 transition duration-300 py-2 px-3 rounded-md">Work</a>
         <a href="#testimonials" class="block text-gray-700 hover:text-blue-600 transition duration-300 py-2 px-3 rounded-md">Testimonials</a>
         <a href="#contact" class="block text-gray-700 hover:text-blue-600 transition duration-300 py-2 px-3 rounded-md">Contact</a>
+        <a href="#podcast" class="block text-gray-700 hover:text-blue-600 transition duration-300 py-2 px-3 rounded-md">Podcast</a>
     </div>
 </nav>
 
-<!-- JavaScript for Mobile Menu Toggle -->
-<script>
-    document.addEventListener('DOMContentLoaded', function() {
-        const mobileMenuButton = document.getElementById('mobile-menu-button');
-        const mobileMenu = document.getElementById('mobile-menu');
-        const navLinks = mobileMenu.querySelectorAll('a');
-
-        mobileMenuButton.addEventListener('click', function() {
-            mobileMenu.classList.toggle('hidden');
-        });
-
-        // Close mobile menu when a link is clicked (for smooth scrolling)
-        navLinks.forEach(link => {
-            link.addEventListener('click', () => {
-                mobileMenu.classList.add('hidden');
-            });
-        });
-    });
-</script>
 
 <!-- Hero Section -->
 <section id="hero" class="relative bg-gradient-to-r from-blue-600 to-indigo-700 text-white py-20 md:py-32 flex items-center justify-center min-h-screen-75 overflow-hidden">
@@ -93,7 +64,7 @@
         <div class="flex flex-col md:flex-row items-center justify-center md:space-x-12">
             <!-- Professional Photo -->
             <div class="mb-8 md:mb-0 md:w-1/3 flex justify-center">
-                <img src="/assets/images/me.png" alt="John Doe" class="w-48 h-48 md:w-64 md:h-64 object-cover rounded-full shadow-xl border-4 border-white">
+                <img src="/assets/images/author.png" alt="John Doe" class="w-48 h-48 md:w-64 md:h-64 object-cover rounded-full shadow-xl border-4 border-white">
             </div>
             <!-- Text Content -->
             <div class="md:w-2/3 text-center md:text-left">
@@ -114,8 +85,9 @@
 <!-- About Me Section -->
 <section id="about" class="py-16 md:py-24 bg-white">
     <div class="container mx-auto px-4 max-w-4xl">
-        <h2 class="text-4xl font-bold text-center text-gray-900 mb-12">About Me</h2>
-        <div class="bg-gray-100 p-8 md:p-12 rounded-lg shadow-lg">
+        <h2 class="text-4xl font-bold text-center text-gray-900 mb-12" data-aos="fade-up">About Me</h2>
+        <div class="bg-gray-100 p-8 md:p-12 rounded-lg shadow-lg" data-aos="fade-up" data-aos-delay="200">
+        
             <p class="text-lg text-gray-700 leading-relaxed mb-6">
                 Welcome to my professional space. I am a dedicated and passionate individual with a proven track record in my field. My work is driven by a commitment to excellence and a desire to make a meaningful impact. I believe in continuous learning and adapting to new challenges to deliver the best possible outcomes for my clients and audience.
 
@@ -156,14 +128,89 @@
     </div>
 </section>
 
+<!-- Project Timeline Section -->
+<section id="timeline" class="py-16 md:py-24 bg-gray-50">
+    <div class="container mx-auto px-4 max-w-4xl">
+        <h2 class="text-4xl font-bold text-center text-gray-900 mb-16" data-aos="fade-up">My Journey</h2>
+        <div class="relative wrap overflow-hidden p-2 md:p-10 h-full">
+            <div class="absolute border-2-2 border-opacity-20 border-blue-400 h-full border" style="left: 50%"></div>
+            
+                
+                
+                
+                
+                <div class="mb-8 flex justify-between items-center w-full right-timeline" data-aos="fade-left">
+                    <div class="order-1 w-5/12"></div>
+                    <div class="z-20 flex items-center order-1 bg-gray-800 shadow-xl w-10 h-10 rounded-full">
+                        <h1 class="mx-auto font-semibold text-lg text-white">1</h1>
+                    </div>
+                    <div class="order-1 bg-blue-500 rounded-lg shadow-xl w-5/12 px-6 py-4">
+                        <h3 class="mb-2 font-bold text-white text-xl">2023</h3>
+                        <p class="text-sm leading-snug tracking-wide text-white text-opacity-90">Launched Project Alpha to great success, exceeding all initial KPIs.</p>
+                    </div>
+                </div>
+                
+            
+                
+                
+                
+                
+                <div class="mb-8 flex justify-between flex-row-reverse items-center w-full left-timeline" data-aos="fade-right">
+                    <div class="order-1 w-5/12"></div>
+                    <div class="z-20 flex items-center order-1 bg-gray-800 shadow-xl w-10 h-10 rounded-full">
+                        <h1 class="mx-auto font-semibold text-lg text-white">2</h1>
+                    </div>
+                    <div class="order-1 bg-indigo-500 rounded-lg shadow-xl w-5/12 px-6 py-4">
+                        <h3 class="mb-2 font-bold text-white text-xl">2022</h3>
+                        <p class="text-sm leading-snug tracking-wide text-white text-opacity-90">Received the 'Innovator of the Year' award for contributions to the field.</p>
+                    </div>
+                </div>
+                
+            
+                
+                
+                
+                
+                <div class="mb-8 flex justify-between items-center w-full right-timeline" data-aos="fade-left">
+                    <div class="order-1 w-5/12"></div>
+                    <div class="z-20 flex items-center order-1 bg-gray-800 shadow-xl w-10 h-10 rounded-full">
+                        <h1 class="mx-auto font-semibold text-lg text-white">3</h1>
+                    </div>
+                    <div class="order-1 bg-blue-500 rounded-lg shadow-xl w-5/12 px-6 py-4">
+                        <h3 class="mb-2 font-bold text-white text-xl">2021</h3>
+                        <p class="text-sm leading-snug tracking-wide text-white text-opacity-90">Published a groundbreaking research paper in a top-tier journal.</p>
+                    </div>
+                </div>
+                
+            
+                
+                
+                
+                
+                <div class="mb-8 flex justify-between flex-row-reverse items-center w-full left-timeline" data-aos="fade-right">
+                    <div class="order-1 w-5/12"></div>
+                    <div class="z-20 flex items-center order-1 bg-gray-800 shadow-xl w-10 h-10 rounded-full">
+                        <h1 class="mx-auto font-semibold text-lg text-white">4</h1>
+                    </div>
+                    <div class="order-1 bg-indigo-500 rounded-lg shadow-xl w-5/12 px-6 py-4">
+                        <h3 class="mb-2 font-bold text-white text-xl">2020</h3>
+                        <p class="text-sm leading-snug tracking-wide text-white text-opacity-90">Started my journey as a professional in this field.</p>
+                    </div>
+                </div>
+                
+            
+        </div>
+    </div>
+</section>
+
 <!-- Portfolio/Work Section -->
 <section id="portfolio" class="py-16 md:py-24 bg-gray-50">
-    <div class="container mx-auto px-4">
+    <div class="container mx-auto px-4" data-aos="fade-up" data-aos-delay="200">
         <h2 class="text-4xl font-bold text-center text-gray-900 mb-12">My Work & Portfolio</h2>
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             
-            <div class="bg-white rounded-lg shadow-xl overflow-hidden transform hover:scale-105 transition duration-300">
-                <img src="https://placehold.co/600x400/000000/FFFFFF?text=Project+Alpha" alt="Project Alpha" class="w-full h-60 object-cover">
+            <div class="bg-white rounded-lg shadow-xl overflow-hidden transform hover:scale-105 transition duration-300" data-aos="zoom-in-up">
+                <img src="https://placehold.co/600x400/3B82F6/FFFFFF?text=Project+Alpha" alt="Project Alpha" class="w-full h-60 object-cover">
                 <div class="p-6">
                     <h3 class="text-2xl font-semibold text-gray-900 mb-2">Project Alpha</h3>
                     <p class="text-sm text-blue-600 font-medium mb-3">Writing</p>
@@ -174,8 +221,8 @@
                 </div>
             </div>
             
-            <div class="bg-white rounded-lg shadow-xl overflow-hidden transform hover:scale-105 transition duration-300">
-                <img src="https://placehold.co/600x400/000000/FFFFFF?text=Case+Study+Beta" alt="Case Study Beta" class="w-full h-60 object-cover">
+            <div class="bg-white rounded-lg shadow-xl overflow-hidden transform hover:scale-105 transition duration-300" data-aos="zoom-in-up">
+                <img src="https://placehold.co/600x400/6366F1/FFFFFF?text=Case+Study+Beta" alt="Case Study Beta" class="w-full h-60 object-cover">
                 <div class="p-6">
                     <h3 class="text-2xl font-semibold text-gray-900 mb-2">Case Study Beta</h3>
                     <p class="text-sm text-blue-600 font-medium mb-3">Legal</p>
@@ -186,8 +233,8 @@
                 </div>
             </div>
             
-            <div class="bg-white rounded-lg shadow-xl overflow-hidden transform hover:scale-105 transition duration-300">
-                <img src="https://placehold.co/600x400/000000/FFFFFF?text=Book+Release+Gamma" alt="Book Release Gamma" class="w-full h-60 object-cover">
+            <div class="bg-white rounded-lg shadow-xl overflow-hidden transform hover:scale-105 transition duration-300" data-aos="zoom-in-up">
+                <img src="https://placehold.co/600x400/10B981/FFFFFF?text=Book+Release+Gamma" alt="Book Release Gamma" class="w-full h-60 object-cover">
                 <div class="p-6">
                     <h3 class="text-2xl font-semibold text-gray-900 mb-2">Book Release Gamma</h3>
                     <p class="text-sm text-blue-600 font-medium mb-3">Publication</p>
@@ -208,7 +255,7 @@
 </section>
 
 <!-- Testimonials Section -->
-<section id="testimonials" class="py-16 md:py-24 bg-white">
+<section id="testimonials" class="py-16 md:py-24 bg-white" data-aos="fade-up" data-aos-delay="200">
     <div class="container mx-auto px-4 max-w-4xl">
         <h2 class="text-4xl font-bold text-center text-gray-900 mb-12">What People Say</h2>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -216,10 +263,7 @@
             <div class="bg-gray-100 p-8 rounded-lg shadow-lg flex flex-col justify-between">
                 <p class="text-xl italic text-gray-700 mb-6">"An exceptional professional with unparalleled dedication and insight. Highly recommended!"</p>
                 <div class="flex items-center">
-                    <!-- Placeholder for initials or small profile image -->
-                    <div class="w-12 h-12 bg-blue-200 text-blue-700 flex items-center justify-center rounded-full text-xl font-bold mr-4 flex-shrink-0">
-                        J
-                    </div>
+                    <img src="https://i.pravatar.cc/150?img=1" alt="Jane Smith" class="w-12 h-12 rounded-full mr-4">
                     <div>
                         <p class="font-semibold text-gray-900">Jane Smith</p>
                         <p class="text-sm text-gray-600">CEO, Company XYZ</p>
@@ -230,10 +274,7 @@
             <div class="bg-gray-100 p-8 rounded-lg shadow-lg flex flex-col justify-between">
                 <p class="text-xl italic text-gray-700 mb-6">"Their work consistently exceeds expectations, delivering impactful results every time."</p>
                 <div class="flex items-center">
-                    <!-- Placeholder for initials or small profile image -->
-                    <div class="w-12 h-12 bg-blue-200 text-blue-700 flex items-center justify-center rounded-full text-xl font-bold mr-4 flex-shrink-0">
-                        R
-                    </div>
+                    <img src="https://i.pravatar.cc/150?img=2" alt="Robert Johnson" class="w-12 h-12 rounded-full mr-4">
                     <div>
                         <p class="font-semibold text-gray-900">Robert Johnson</p>
                         <p class="text-sm text-gray-600">Editor-in-Chief, Publishing House</p>
@@ -244,10 +285,7 @@
             <div class="bg-gray-100 p-8 rounded-lg shadow-lg flex flex-col justify-between">
                 <p class="text-xl italic text-gray-700 mb-6">"Truly a master of their craft. Their expertise was invaluable to our success."</p>
                 <div class="flex items-center">
-                    <!-- Placeholder for initials or small profile image -->
-                    <div class="w-12 h-12 bg-blue-200 text-blue-700 flex items-center justify-center rounded-full text-xl font-bold mr-4 flex-shrink-0">
-                        E
-                    </div>
+                    <img src="https://i.pravatar.cc/150?img=3" alt="Emily White" class="w-12 h-12 rounded-full mr-4">
                     <div>
                         <p class="font-semibold text-gray-900">Emily White</p>
                         <p class="text-sm text-gray-600">Managing Partner, Law Firm ABC</p>
@@ -255,6 +293,26 @@
                 </div>
             </div>
             
+        </div>
+    </div>
+</section>
+
+<!-- Podcast Section -->
+<section id="podcast" class="py-16 md:py-24 bg-gray-50">
+    <div class="container mx-auto px-4 max-w-4xl text-center">
+        <h2 class="text-4xl font-bold text-gray-900 mb-8" data-aos="fade-up">My Podcast</h2>
+        <p class="text-xl text-gray-700 mb-10" data-aos="fade-up" data-aos-delay="100">
+            I host a podcast where I discuss the latest trends and interview industry experts. Check out the latest episode!
+        </p>
+        
+        <div class="max-w-2xl mx-auto" data-aos="zoom-in-up" data-aos-delay="200">
+            <a href="YOUR_SPOTIFY_PODCAST_LINK_HERE" target="_blank" rel="noopener noreferrer" class="block rounded-lg shadow-xl overflow-hidden group">
+                <img 
+                    src="https://placehold.co/800x400/1DB954/FFFFFF?text=Listen+on+Spotify&font=lato" 
+                    alt="Promo image for my podcast - Click to listen on Spotify" 
+                    class="w-full object-cover transition duration-300 group-hover:scale-105"
+                >
+            </a>
         </div>
     </div>
 </section>
@@ -286,11 +344,11 @@
             </div>
             
             
-            <div class="flex items-center bg-white text-gray-800 p-4 rounded-lg shadow-md">
-                <svg class="w-6 h-6 mr-3 text-blue-600" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.471.087.686-.207.686-.465 0-.229-.008-.849-.013-1.666-2.782.603-3.37-1.34-3.37-1.34-.454-1.156-1.11-1.464-1.11-1.464-.908-.62.069-.608.069-.608 1.007.07 1.532 1.03 1.532 1.03.89 1.529 2.34 1.089 2.91.833.091-.647.349-1.089.635-1.338-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.682-.103-.253-.447-1.27.098-2.651 0 0 .84-.27 2.75 1.025.798-.222 1.649-.333 2.498-.337.85.004 1.7.115 2.498.337 1.908-1.295 2.748-1.025 2.748-1.025.546 1.381.202 2.398.099 2.651.64.698 1.028 1.591 1.028 2.682 0 3.841-2.339 4.686-4.566 4.935.359.309.678.919.678 1.852 0 1.338-.012 2.419-.012 2.747 0 .259.215.556.692.458C21.133 20.19 24 16.438 24 12.017 24 6.484 19.522 2 14 2h-2z"/></svg>
-                <a href="https://github.com/your_github" target="_blank" rel="noopener noreferrer" class="font-medium hover:underline">GitHub</a>
-            </div>
-            
+<div class="flex items-center bg-white text-gray-800 p-4 rounded-lg shadow-md">
+    <svg class="w-6 h-6 mr-3 text-blue-600" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z"></path></svg>
+    <a href="https://facebook.com/your_facebook" target="_blank" rel="noopener noreferrer" class="font-medium hover:underline">Facebook</a>
+</div>
+
         </div>
 
         <!-- Placeholder for Contact Form -->
@@ -314,7 +372,7 @@
                 </button>
             </form>
             <p class="text-xs text-gray-500 mt-4">
-                *Note: For the contact form to work, you'll need to integrate a backend service like Formspree, Netlify Forms, or similar. Replace "YOUR_FORM_SUBMISSION_URL" with your actual form endpoint.
+                <!--  *Note: For the contact form to work, you'll need to integrate a backend service like Formspree, Netlify Forms, or similar. Replace "YOUR_FORM_SUBMISSION_URL" with your actual form endpoint. -->
             </p>
         </div>
     </div>
@@ -323,6 +381,20 @@
 <!-- Footer -->
 <footer class="bg-gray-900 text-white py-8">
     <div class="container mx-auto px-4 text-center">
+        <!-- Newsletter Signup -->
+        <div class="max-w-xl mx-auto mb-8 p-6 bg-gray-800 rounded-lg shadow-lg">
+            <h3 class="text-2xl font-semibold mb-4">Join My Newsletter</h3>
+            <p class="text-gray-400 mb-6">Stay updated with my latest projects, articles, and insights. No spam, ever.</p>
+            <form action="YOUR_NEWSLETTER_FORM_URL" method="POST" class="flex flex-col sm:flex-row gap-4">
+                <input type="email" name="email" class="w-full sm:w-2/3 bg-gray-700 text-white border border-gray-600 rounded-md py-3 px-4 focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Enter your email" required>
+                <button type="submit" class="w-full sm:w-1/3 bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-md transition duration-300">
+                    Subscribe
+                </button>
+            </form>
+            <p class="text-xs text-gray-500 mt-4">
+                <!-- *Powered by a service like Mailchimp or ConvertKit. Replace the form action URL. -->
+            </p>
+        </div>
         <p class="text-sm">&copy; 2025 John Doe. All rights reserved.</p>
         <div class="flex justify-center space-x-4 mt-4">
             
@@ -332,12 +404,13 @@
             <a href="https://linkedin.com/in/your_linkedin" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-white transition duration-300">LinkedIn</a>
             
             
-            <a href="https://github.com/your_github" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-white transition duration-300">GitHub</a>
-            
         </div>
     </div>
 </footer>
 
 
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <script src="/assets/js/main.js"></script>
 </body>
 </html>

@@ -1,0 +1,28 @@
+body {
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+body.loaded {
+  opacity: 1;
+}
+
+/* Timeline layout fixes */
+.left-timeline .order-1 {
+  order: 2;
+}
+
+.right-timeline .order-1 {
+  order: 1;
+}
+
+@media (min-width: 768px) {
+  .left-timeline .w-5\/12:first-child {
+    text-align: left;
+  }
+  .right-timeline .w-5\/12:last-child {
+    text-align: right;
+  }
+}
+
+/*# sourceMappingURL=main.css.map */

@@ -1,17 +1,17 @@
 # Site settings
-title: Your Name | Professional Title
+title: John Doe | Software Engineer
 email: your.email@example.com
 description: >- # this means to ignore newlines until "baseurl:"
   A versatile one-page personal branding template for journalists, authors, lawyers, and other professionals.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: your_twitter
-github_username: your_github
+facebook_username: your_facebook
 linkedin_username: your_linkedin
 
 # Professional Profile Variables (Easily customizable for different professions)
 # You can change these directly in _config.yml or override in page front matter
-profession: "General Professional" # e.g., "Journalist", "Author", "Lawyer"
+profession: "Software Engineer, Front end & App Developer" # e.g., "Journalist", "Author", "Lawyer"
 full_name: "John Doe"
 tagline: "Crafting impactful narratives and delivering exceptional results."
 hero_cta_text: "Learn More About My Work"
@@ -27,36 +27,51 @@ about_me_accomplishments:
   - "Published 10+ articles/books in leading industry journals/publishers"
   - "Keynote speaker at 5+ international conferences"
 
+# Project Timeline Section
+project_timeline:
+  - year: 2023
+    event: "Launched Project Alpha to great success, exceeding all initial KPIs."
+  - year: 2022
+    event: "Received the 'Innovator of the Year' award for contributions to the field."
+  - year: 2021
+    event: "Published a groundbreaking research paper in a top-tier journal."
+  - year: 2020
+    event: "Started my journey as a professional in this field."
+
 # Portfolio/Work Section Configuration
 # This is a sample structure. You'll add more items in the actual HTML.
+# In _config.yml
 portfolio_items:
   - title: "Project Alpha"
     category: "Writing"
-    image: "https://placehold.co/600x400/000000/FFFFFF?text=Project+Alpha"
+    image: "https://placehold.co/600x400/3B82F6/FFFFFF?text=Project+Alpha" # Blue background
     link: "#"
     description: "A detailed description of Project Alpha, highlighting key achievements and impact."
   - title: "Case Study Beta"
     category: "Legal"
-    image: "https://placehold.co/600x400/000000/FFFFFF?text=Case+Study+Beta"
+    image: "https://placehold.co/600x400/6366F1/FFFFFF?text=Case+Study+Beta" # Indigo background
     link: "#"
     description: "An overview of Case Study Beta, demonstrating problem-solving and successful outcomes."
   - title: "Book Release Gamma"
     category: "Publication"
-    image: "https://placehold.co/600x400/000000/FFFFFF?text=Book+Release+Gamma"
+    image: "https://placehold.co/600x400/10B981/FFFFFF?text=Book+Release+Gamma" # Green background
     link: "#"
     description: "Information about Book Release Gamma, including its themes and critical reception."
-
+    
 # Testimonials Section Configuration
 testimonials:
   - quote: "An exceptional professional with unparalleled dedication and insight. Highly recommended!"
     author: "Jane Smith"
     title: "CEO, Company XYZ"
+    image: "https://i.pravatar.cc/150?img=1"
   - quote: "Their work consistently exceeds expectations, delivering impactful results every time."
     author: "Robert Johnson"
     title: "Editor-in-Chief, Publishing House"
+    image: "https://i.pravatar.cc/150?img=2"
   - quote: "Truly a master of their craft. Their expertise was invaluable to our success."
     author: "Emily White"
     title: "Managing Partner, Law Firm ABC"
+    image: "https://i.pravatar.cc/150?img=3" 
 
 # Build settings
 markdown: kramdown
